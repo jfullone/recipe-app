@@ -1,0 +1,23 @@
+.recipe-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8b735;
+  margin: 20px 0px 20px 0px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+}
+
+.dietary-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  justify-content: center;
+}
+
+.search-header {
+  font-size: 18px;
+  color: #213037;
+  margin: 10px;
+  text-align: center;
+}
