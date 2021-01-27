@@ -4,17 +4,12 @@ import { RecipeService } from './shared/services/recipe.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'recipe-app';
-  // recipe: 
 
-  constructor(private recipeService: RecipeService) {}
-     
-  ngOnInit() {
-       this.recipeService.getRecipe('chicken').subscribe((data: any) => {
-        console.log(data);
-       })
-  }
+  constructor() {}
+
+  ngOnInit() {}
 }

@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { from, fromEvent } from 'rxjs';
-
+import { Recipe } from 'src/app/shared/models/recipe.interface';
 
 @Component({
-  selector: 'app-recipe-list',
+  selector: 'recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.css']
+  styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  recipes: Recipe[] = [];
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

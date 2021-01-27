@@ -1,2 +1,5 @@
-<app-header></app-header>
-<p>recipe-list works!</p>
+<div class="recipe-list">
+  <div *ngFor="let recipe of recipes">
+    <recipe-card></recipe-card>
+  </div>
+</div>
