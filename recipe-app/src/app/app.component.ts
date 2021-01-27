@@ -9,11 +9,7 @@ import { RecipeService } from './shared/services/recipe.service';
 export class AppComponent implements OnInit {
   title = 'recipe-app';
 
-  constructor(private recipeService: RecipeService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.recipeService.getRecipe('chicken').subscribe((data: any) => {
-      console.log(data);
-    });
-  }
+  ngOnInit() {}
 }

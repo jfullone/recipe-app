@@ -1,3 +1,5 @@
 <div class="recipe-list">
-  <recipe-card></recipe-card>
+  <div *ngFor="let recipe of recipes">
+    <recipe-card></recipe-card>
+  </div>
 </div>

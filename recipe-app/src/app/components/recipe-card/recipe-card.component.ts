@@ -8,5 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class RecipeCardComponent implements OnInit {
   constructor() {}
 
+  /*   setFavorite(): void {
+    if (!this.recipe.favorite) {
+      this.favorites.push(this.recipe);
+    } else {
+      const index: number = this.recipes.indexOf(this.recipe);
+      this.recipes.splice(index, 1);
+    }
+  } */
+
   ngOnInit(): void {}
 }

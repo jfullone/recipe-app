@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, fromEvent } from 'rxjs';
+import { Recipe } from 'src/app/shared/models/recipe.interface';
 
 @Component({
   selector: 'recipe-list',
@@ -8,6 +8,8 @@ import { from, fromEvent } from 'rxjs';
 })
 export class RecipeListComponent implements OnInit {
   constructor() {}
+
+  recipes: Recipe[] = [];
 
   ngOnInit(): void {}
 }
