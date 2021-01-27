@@ -28,8 +28,10 @@ export class SearchCriteriaComponent implements OnInit {
 
   searchRecipes(event: any) {
     event.stopPropagation();
+
     this.recipeService.getRecipes().subscribe((data: any) => {
-      this.setRecipe(data);
+      console.log(data.hits[0].recipe);
+      //this.setRecipe(data);
     });
   }
 

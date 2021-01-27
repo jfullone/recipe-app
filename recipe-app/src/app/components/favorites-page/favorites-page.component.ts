@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from 'src/app/shared/models/recipe.interface';
 
 @Component({
   selector: 'favorites-page',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesPageComponent implements OnInit {
   constructor() {}
+
+  favorites: Recipe[] = [];
 
   ngOnInit(): void {}
 }

@@ -36,7 +36,8 @@ export class RecipeService {
     dietRestrictionsParam.join('');
 
     return this.http.get(
-      `${this.apiURL}&q=${this.keyword}&mealType=${this.mealType}${dietRestrictionsParam}`
+      //`${this.apiURL}&q=${this.keyword}&mealType=${this.mealType}${dietRestrictionsParam}`
+      'https://api.edamam.com/search?app_id=6fa67ecc&app_key=2023a81e815598f21c69a01dfd671038&from=0&to=20&q=chicken'
     );
   }
 }
