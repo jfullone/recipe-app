@@ -9,6 +9,7 @@ import { FavoritesPageComponent } from './components/favorites-page/favorites-pa
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { SearchCriteriaComponent } from './components/search-criteria/search-criteria.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
