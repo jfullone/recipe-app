@@ -1,0 +1,50 @@
+.recipe-card {
+  position: absolute;
+  width: 70%;
+  background-color: #79b8b9;
+  padding: 30px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #213037;
+}
+
+.recipe-name {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.dot {
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  margin: 0px 5px;
+}
+
+.recipe-description {
+  margin: 10px 40px 0px 0px;
+}
+
+.bookmark-area {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0px 5px;
+}
+
+button.bookmark {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+}
+
+.bookmark-icon {
+  font-size: 27px;
+  color: #213037;
+}
+
+.bookmark-icon:hover {
+  color: #f78f27;
+  cursor: pointer;
+}
