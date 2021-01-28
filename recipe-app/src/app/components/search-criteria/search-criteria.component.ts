@@ -23,8 +23,8 @@ export class SearchCriteriaComponent implements OnInit {
       image: recipe.image,
       servings: recipe.yield,
       time: recipe.totalTime,
-      dietLabels: recipe.dietLables,
-      healthLabels: recipe.healthLables,
+      dietLabels: recipe.dietLabels,
+      healthLabels: recipe.healthLabels,
       ingredientLines: recipe.ingredientLines,
       favorite: false,
     };
@@ -36,6 +36,7 @@ export class SearchCriteriaComponent implements OnInit {
     event.stopPropagation();
 
     this.recipeService.getRecipes().subscribe((data: any) => {
+      console.log(data);
       data.hits.forEach((hit: { recipe: any }) => {
         this.setRecipeList(hit.recipe);
       });
