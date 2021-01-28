@@ -4,16 +4,42 @@
     ><a>{{ recipe.name }}</a></span
   >
   <span class="recipe-details">
-    <mat-icon class="dot">fiber_manual_record</mat-icon>
-    <span class="meal-type">Breakfast</span>
-    <mat-icon class="dot">fiber_manual_record</mat-icon>
-    <span class="meal-yield">{{ recipe.servings }} servings</span>
-    <mat-icon class="dot">fiber_manual_record</mat-icon>
-    <span class="diet">Vegan</span>
+    <div>
+      <mat-icon class="timer">timer</mat-icon>
+      <span class="time"> {{recipe.time}} mins</span>
+    </div>
+    <div>
+      <mat-icon class="group">groups</mat-icon>
+      <span class="meal-yield">Serves {{ recipe.servings }} </span>
+    </div>
+    <!-- <mat-icon class="dot">fiber_manual_record</mat-icon>
+    <span class="diet">Vegan</span> -->
   </span>
   <div class="bookmark-area">
     <button class="bookmark">
       <mat-icon class="bookmark-icon">favorite</mat-icon>
     </button>
   </div>
+  <button (click)="toggleInfo()" class="more-info-button">LET'S COOK!<span class="material-icons">
+    expand_more
+    </span></button>
+  <div *ngIf="showInfo" class="more-info-container">
+    <button (click)="toggleInfo()" class="less-info-button"><span class="material-icons">
+      expand_less
+      </span></button>
+      <div class="link-container">
+        <mat-icon class="link">link</mat-icon>
+        <div class="recipe-url"> <a href="{{ recipe.url }}">Check out this recipe!</a> </div>
+      </div>
+      <div class="ingredient-container">
+        <mat-icon class="menu-book">menu_book</mat-icon>
+        <div class="ingredients"> {{ recipe.ingredientLines }} </div>
+      </div>
+      <div class="diet-health-container">
+        <mat-icon class="info">info</mat-icon>
+        <div class="diet-health-labels"> {{ recipe.dietLabels }}  {{ recipe.healthLabels }} </div>
+      </div>
+    
+  </div>
 </div>
+

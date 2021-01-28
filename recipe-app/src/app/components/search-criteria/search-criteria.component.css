@@ -7,7 +7,7 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
-  height: 75%;
+  /* height: 75%; */
 }
 
 .selections-container {
@@ -88,6 +88,7 @@ input:hover {
   width: 200px;
   background-color: #cfd1d0;
   cursor: text;
+  font-family: 'Poppins', sans-serif;
 }
 
 .submit-search {

@@ -2,11 +2,12 @@
 html,
 body {
   height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   background-color: #f1f1f0;
   /* font-family: "Roboto", sans-serif; */
-  font-family: 'Poppins', sans-serif;
+  
 
 }

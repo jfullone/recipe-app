@@ -8,6 +8,9 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   styleUrls: ['./recipe-card.component.css'],
 })
 export class RecipeCardComponent implements OnInit {
+
+  showInfo: boolean = false;
+
   @Input() recipe: Recipe = {
     name: '',
     url: '',
@@ -30,6 +33,10 @@ export class RecipeCardComponent implements OnInit {
       this.recipes.splice(index, 1);
     }
   } */
+
+  toggleInfo() {
+    this.showInfo = !this.showInfo;
+  }
 
   constructor() {}
 
