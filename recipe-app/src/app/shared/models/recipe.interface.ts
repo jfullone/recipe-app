@@ -4,7 +4,7 @@ export interface Recipe {
   image: string;
   servings: number;
   time: number;
-  dietLabels: string;
+  dietLabels: string[];
   healthLabels: string[];
   ingredientLines: string[];
   favorite: boolean;

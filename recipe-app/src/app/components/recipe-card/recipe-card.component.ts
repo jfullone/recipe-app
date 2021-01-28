@@ -14,7 +14,7 @@ export class RecipeCardComponent implements OnInit {
     image: '',
     servings: 0,
     time: 0,
-    dietLabels: '',
+    dietLabels: [],
     healthLabels: [],
     ingredientLines: [],
     favorite: false,
