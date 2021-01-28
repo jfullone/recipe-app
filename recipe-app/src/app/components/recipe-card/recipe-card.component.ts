@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Recipe } from 'src/app/shared/models/recipe.interface';
+import { RecipeService } from 'src/app/shared/services/recipe.service';
 
 @Component({
   selector: 'recipe-card',
@@ -6,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-card.component.css'],
 })
 export class RecipeCardComponent implements OnInit {
-  constructor() {}
+  @Input() recipe: Recipe = {
+    name: '',
+    url: '',
+    image: '',
+    servings: 0,
+    time: 0,
+    dietLabels: '',
+    healthLabels: [],
+    ingredientLines: [],
+    favorite: false,
+  };
+
+  @Input() recipeList: Recipe[] = [];
 
   /*   setFavorite(): void {
     if (!this.recipe.favorite) {
@@ -16,6 +30,8 @@ export class RecipeCardComponent implements OnInit {
       this.recipes.splice(index, 1);
     }
   } */
+
+  constructor() {}
 
   ngOnInit(): void {}
 }

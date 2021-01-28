@@ -1,12 +1,12 @@
 .recipe-card {
-  position: absolute;
   width: 70%;
+  margin: 30px auto;
   background-color: #79b8b9;
   padding: 30px;
   border-radius: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   color: #213037;
+  height: 300px;
 }
 
 .recipe-name {

@@ -10,29 +10,38 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
 
-  /*   get recipe(): Recipe {
-    return this.recipeService.recipe;
-  } */
+  recipeRoute: string = '';
 
-  setRecipe(data: any) {
-    this.recipeService.recipe.name = data.recipe.label;
-    this.recipeService.recipe.url = data.recipe.url;
-    this.recipeService.recipe.image = data.recipe.image;
-    this.recipeService.recipe.servings = data.recipe.yield;
-    this.recipeService.recipe.time = data.recipe.totalTime;
-    this.recipeService.recipe.dietLabels = data.recipe.dietLables;
-    this.recipeService.recipe.healthLabels = data.recipe.healthLables;
-    this.recipeService.recipe.ingredientLines = data.recipe.ingredientLines;
-    this.recipeService.recipe.favorite = false;
+  get recipeList(): Recipe[] {
+    return this.recipeService.recipeList;
+  }
+
+  setRecipeList(recipe: any) {
+    const newRecipe: Recipe = {
+      name: recipe.label,
+      url: recipe.url,
+      image: recipe.image,
+      servings: recipe.yield,
+      time: recipe.totalTime,
+      dietLabels: recipe.dietLables,
+      healthLabels: recipe.healthLables,
+      ingredientLines: recipe.ingredientLines,
+      favorite: false,
+    };
+
+    this.recipeService.recipeList.push(newRecipe);
   }
 
   searchRecipes(event: any) {
     event.stopPropagation();
 
     this.recipeService.getRecipes().subscribe((data: any) => {
-      console.log(data.hits[0].recipe);
-      //this.setRecipe(data);
+      data.hits.forEach((hit: { recipe: any }) => {
+        this.setRecipeList(hit.recipe);
+      });
     });
+
+    this.recipeRoute = '/recipe-list';
   }
 
   ngOnInit(): void {}

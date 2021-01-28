@@ -12,17 +12,7 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  recipe: Recipe = {
-    name: '',
-    url: '',
-    image: '',
-    servings: 0,
-    time: 0,
-    dietLabels: '',
-    healthLabels: [],
-    ingredientLines: [],
-    favorite: false,
-  };
+  recipeList: Recipe[] = [];
 
   keyword: string = '';
   dietRestrictions: string[] = [];
