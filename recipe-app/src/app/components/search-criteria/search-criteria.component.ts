@@ -10,9 +10,9 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
 
-  get recipe(): Recipe {
+  /*   get recipe(): Recipe {
     return this.recipeService.recipe;
-  }
+  } */
 
   setRecipe(data: any) {
     this.recipeService.recipe.name = data.recipe.label;
