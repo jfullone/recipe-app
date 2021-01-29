@@ -31,9 +31,11 @@ export class RecipeCardComponent implements OnInit {
   setFavorite(recipe: Recipe): void {
     if (!recipe.favorite) {
       this.favoriteList.push(recipe);
+      this.favColor = '#f78f27';
     } else {
       const index: number = this.favoriteList.indexOf(recipe);
       this.favoriteList.splice(index, 1);
+      this.favColor = '#213037';
     }
     recipe.favorite = !recipe.favorite;
   }
