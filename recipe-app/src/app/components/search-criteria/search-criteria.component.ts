@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe } from 'src/app/shared/models/recipe.interface';
 import { RecipeService } from 'src/app/shared/services/recipe.service';
 
@@ -8,22 +9,21 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService, private router: Router) {}
 
   keyword: string = '';
   dietRestrictions: string[] = [];
-  maxIngredients: number = 0;
-  diets: string[] =['Vegan', 'Vegetarian'];
+  maxIngredients?: any;
+  diets: string[] = ['Vegan', 'Vegetarian'];
   recipeRoute: string = '';
 
-  onCheckChange(event:any) {
+  onCheckChange(event: any) {
     if (event.target.checked) {
       this.dietRestrictions.push(event.target.value);
-    }
-    else {
+    } else {
       let i: number = this.dietRestrictions.indexOf(event.target.value);
       this.dietRestrictions.splice(i, 1);
-     }
+    }
   }
 
   get recipeList(): Recipe[] {
@@ -47,15 +47,14 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   searchRecipes(event: any) {
-    event.stopPropagation();
-
-    this.recipeService.getRecipes(this.keyword, this.dietRestrictions, this.maxIngredients).subscribe((data: any) => {
-      data.hits.forEach((hit: { recipe: any }) => {
-        this.setRecipeList(hit.recipe);
+    this.recipeService
+      .getRecipes(this.keyword, this.dietRestrictions, this.maxIngredients)
+      .subscribe((data: any) => {
+        data.hits.forEach((hit: { recipe: any }) => {
+          this.setRecipeList(hit.recipe);
+        });
+        this.router.navigate(['/recipe-list']);
       });
-    });
-
-    this.recipeRoute = '/recipe-list';
   }
 
   ngOnInit(): void {

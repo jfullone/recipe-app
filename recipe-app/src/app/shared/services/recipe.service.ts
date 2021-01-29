@@ -15,20 +15,26 @@ export class RecipeService {
   recipeList: Recipe[] = [];
   favoriteList: Recipe[] = [];
 
-
   mealType: string = '';
 
-  getRecipes(keyword: string, dietRestrictions: string[], maxIngredients: number): Observable<any> {
+  getRecipes(
+    keyword: string,
+    dietRestrictions: string[],
+    maxIngredients: number
+  ): Observable<any> {
     let dietRestrictionsParamArr: string[] = [];
     dietRestrictions.forEach((restriction) => {
-      const restrictionFormatted = restriction.toLowerCase().split(' ').join('-');
+      const restrictionFormatted = restriction
+        .toLowerCase()
+        .split(' ')
+        .join('-');
       dietRestrictionsParamArr.push(`&health=${restrictionFormatted}`);
     });
 
     let dietRestrictionsParam = dietRestrictionsParamArr.join('');
-    let maxIngredientsParam = ''
+    let maxIngredientsParam = '';
     if (maxIngredients > 0) {
-      maxIngredientsParam = `ingr=${maxIngredients}`
+      maxIngredientsParam = `&ingr=${maxIngredients}`;
     }
     return this.http.get(
       `${this.apiURL}&q=${keyword}${dietRestrictionsParam}${maxIngredientsParam}`

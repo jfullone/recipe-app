@@ -11,8 +11,10 @@ export class RecipeListComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
 
   recipeList: Recipe[] = [];
+  recipeListEmpty: boolean = true;
 
   ngOnInit(): void {
     this.recipeList = this.recipeService.recipeList;
+    this.recipeListEmpty = this.recipeList.length <= 0;
   }
 }
