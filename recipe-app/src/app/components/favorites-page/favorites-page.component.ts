@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/shared/models/recipe.interface';
+import { RecipeService } from 'src/app/shared/services/recipe.service';
 
 @Component({
   selector: 'favorites-page',
@@ -7,9 +8,11 @@ import { Recipe } from 'src/app/shared/models/recipe.interface';
   styleUrls: ['./favorites-page.component.css'],
 })
 export class FavoritesPageComponent implements OnInit {
-  constructor() {}
+  constructor(private recipeService: RecipeService) {}
 
-  favorites: Recipe[] = [];
+  favoriteList: Recipe[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.favoriteList = this.recipeService.favoriteList;
+  }
 }

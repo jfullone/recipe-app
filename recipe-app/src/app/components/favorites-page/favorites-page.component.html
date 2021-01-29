@@ -1,1 +1,6 @@
-<recipe-card></recipe-card>
+<div class="favorite-list">
+    <div class="favorite" *ngFor="let favorite of favoriteList">
+      <recipe-card [recipe]="favorite"></recipe-card>
+    </div>
+  </div>
+  

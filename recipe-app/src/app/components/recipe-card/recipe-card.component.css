@@ -59,11 +59,11 @@ button.bookmark {
   padding: 0px;
   border: none;
   background-color: transparent;
+  outline: none;
 }
 
 .bookmark-icon {
   font-size: 27px;
-  color: #213037;
 }
 
 .bookmark-icon:hover {

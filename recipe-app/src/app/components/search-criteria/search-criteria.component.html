@@ -6,102 +6,31 @@
       placeholder="ie. beef stew"
       class="keyword-search"
       name="keyword"
+      [(ngModel)]="keyword"
     />
   </div>
   <div class="selections-container">
     <div class="dietary-checkboxes">
       <div class="search-header">DIET</div>
-      <div class="checkboxes">
-        <div>
-          <input type="checkbox" name="keto" />
-          <label for="keto">Keto</label>
-        </div>
-        <div>
-          <input type="checkbox" name="kosher" />
-          <label for="kosher">Kosher</label>
-        </div>
-        <div>
-          <input type="checkbox" name="low-fat" />
-          <label for="low-fat">Low Fat</label>
-        </div>
-        <div>
-          <input type="checkbox" name="low-sodium" />
-          <label for="low-sodium">Low Sodium</label>
-        </div>
-        <div>
-          <input type="checkbox" name="low-sugar" />
-          <label for="low-sugar">Low Sugar</label>
-        </div>
-        <div>
-          <input type="checkbox" name="paleo" />
-          <label for="paleo">Paleo</label>
-        </div>
-        <div>
-          <input type="checkbox" name="pescatarian" />
-          <label for="pescatarian">Pescatarian</label>
-        </div>
-        <div>
-          <input type="checkbox" name="vegan" />
-          <label for="vegan">Vegan</label>
-        </div>
-        <div>
-          <input type="checkbox" name="vegetarian" />
-          <label for="vegetarian">Vegetarian</label>
+      <div *ngFor="let diet of diets; let i=index" class="checkboxes">
+        <div class="checkbox">
+        <input type="checkbox" [value]="diet" (change)="onCheckChange($event)">
+        <label>{{diet}}</label>
         </div>
       </div>
-    </div>
-    <div class="allergy-checkboxes">
-      <div class="search-header">ALLERGY</div>
-      <div class="checkboxes">
-        <div>
-          <input type="checkbox" name="celery-free" />
-          <label for="celery-free">Celery Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="dairy-free" />
-          <label for="dairy-free">Dairy Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="tree-nut-free" />
-          <label for="tree-nut-free">Tree Nut Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="shellfish-free" />
-          <label for="shellfish-free">Shellfish Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="gluten-free" />
-          <label for="gluten-free">Gluten Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="soy-free" />
-          <label for="soy-free">Soy Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="egg-free" />
-          <label for="egg-free">Egg Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="peanut-free" />
-          <label for="peanut-free">Peanut Free</label>
-        </div>
-        <div>
-          <input type="checkbox" name="pork-free" />
-          <label for="pork-free">Pork Free</label>
-        </div>
-      </div>
-    </div>
-    <div class="meal-types">
-      <div class="search-header">MEAL TYPE</div>
-      <select>
-        <option selected>Select Option</option>
-        <option>Snack</option>
-        <option>Breakfast</option>
-        <option>Lunch</option>
-        <option>Dinner</option>
-      </select>
     </div>
   </div>
+
+    <div class="ingerdients">
+      <div class="search-header"><label for="max-ingredients">MAX INGREDIENTS</label></div>
+      <input
+        type="text"
+        placeholder="ie. 4"
+        class="max-ingredients"
+        name="max-ingredients"
+        [(ngModel)]="maxIngredients"
+      />
+    </div>
 
   <button
     class="submit-search"

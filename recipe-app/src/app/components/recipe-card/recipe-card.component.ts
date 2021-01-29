@@ -25,20 +25,27 @@ export class RecipeCardComponent implements OnInit {
 
   @Input() recipeList: Recipe[] = [];
 
-  /*   setFavorite(): void {
-    if (!this.recipe.favorite) {
-      this.favorites.push(this.recipe);
+  favoriteList: Recipe[] = this.recipeService.favoriteList;
+
+  favColor: string = "";
+
+  setFavorite(recipe: Recipe): void {
+    if (!recipe.favorite) {
+      this.favoriteList.push(recipe);
+      this.favColor = '#f78f27';
     } else {
-      const index: number = this.recipes.indexOf(this.recipe);
-      this.recipes.splice(index, 1);
+      const index: number = this.favoriteList.indexOf(recipe);
+      this.favoriteList.splice(index, 1);
+      this.favColor = '#213037';
     }
-  } */
+    recipe.favorite = !recipe.favorite;
+  }
 
   toggleInfo() {
     this.showInfo = !this.showInfo;
   }
 
-  constructor() {}
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {}
 }

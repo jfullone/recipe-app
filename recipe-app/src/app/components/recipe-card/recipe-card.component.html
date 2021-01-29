@@ -12,12 +12,10 @@
       <mat-icon class="group">groups</mat-icon>
       <span class="meal-yield">Serves {{ recipe.servings }} </span>
     </div>
-    <!-- <mat-icon class="dot">fiber_manual_record</mat-icon>
-    <span class="diet">Vegan</span> -->
   </span>
   <div class="bookmark-area">
-    <button class="bookmark">
-      <mat-icon class="bookmark-icon">favorite</mat-icon>
+    <button class="bookmark" (click)="setFavorite(recipe)">
+      <mat-icon class="bookmark-icon" [style.color]="favColor">favorite</mat-icon>
     </button>
   </div>
   <button (click)="toggleInfo()" class="more-info-button">LET'S COOK!<span class="material-icons">

@@ -13,21 +13,25 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
 
   recipeList: Recipe[] = [];
+  favoriteList: Recipe[] = [];
 
-  keyword: string = '';
-  dietRestrictions: string[] = [];
+
   mealType: string = '';
 
-  getRecipes(): Observable<any> {
-    let dietRestrictionsParam: string[] = [];
-    this.dietRestrictions.forEach((restriction) => {
-      dietRestrictionsParam.push(`&health=${restriction}`);
+  getRecipes(keyword: string, dietRestrictions: string[], maxIngredients: number): Observable<any> {
+    let dietRestrictionsParamArr: string[] = [];
+    dietRestrictions.forEach((restriction) => {
+      const restrictionFormatted = restriction.toLowerCase().split(' ').join('-');
+      dietRestrictionsParamArr.push(`&health=${restrictionFormatted}`);
     });
-    dietRestrictionsParam.join('');
 
+    let dietRestrictionsParam = dietRestrictionsParamArr.join('');
+    let maxIngredientsParam = ''
+    if (maxIngredients > 0) {
+      maxIngredientsParam = `ingr=${maxIngredients}`
+    }
     return this.http.get(
-      //`${this.apiURL}&q=${this.keyword}&mealType=${this.mealType}${dietRestrictionsParam}`
-      'https://api.edamam.com/search?app_id=6fa67ecc&app_key=2023a81e815598f21c69a01dfd671038&from=0&to=20&q=chicken'
+      `${this.apiURL}&q=${keyword}${dietRestrictionsParam}${maxIngredientsParam}`
     );
   }
 }

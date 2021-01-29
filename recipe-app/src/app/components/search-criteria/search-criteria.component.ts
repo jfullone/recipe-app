@@ -10,7 +10,21 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
 
+  keyword: string = '';
+  dietRestrictions: string[] = [];
+  maxIngredients: number = 0;
+  diets: string[] =['Vegan', 'Vegetarian'];
   recipeRoute: string = '';
+
+  onCheckChange(event:any) {
+    if (event.target.checked) {
+      this.dietRestrictions.push(event.target.value);
+    }
+    else {
+      let i: number = this.dietRestrictions.indexOf(event.target.value);
+      this.dietRestrictions.splice(i, 1);
+     }
+  }
 
   get recipeList(): Recipe[] {
     return this.recipeService.recipeList;
@@ -35,8 +49,7 @@ export class SearchCriteriaComponent implements OnInit {
   searchRecipes(event: any) {
     event.stopPropagation();
 
-    this.recipeService.getRecipes().subscribe((data: any) => {
-      console.log(data);
+    this.recipeService.getRecipes(this.keyword, this.dietRestrictions, this.maxIngredients).subscribe((data: any) => {
       data.hits.forEach((hit: { recipe: any }) => {
         this.setRecipeList(hit.recipe);
       });
@@ -45,5 +58,7 @@ export class SearchCriteriaComponent implements OnInit {
     this.recipeRoute = '/recipe-list';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recipeService.recipeList = [];
+  }
 }
