@@ -146,3 +146,56 @@ a {
 a:visited {
   color: #213037;
 }
+
+@media only screen and (max-width: 768px) {
+  .recipe-card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    margin: 10px;
+  }
+
+  .recipe-details {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .recipe-name {
+    margin: auto 10px;
+    width: 150px;
+  }
+
+  img {
+    height: 150px;
+    width: 25%;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .more-info-button {
+    width: 25%;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 8px;
+  }
+
+  .recipe-details div {
+    padding: 8px;
+    margin-right: 0px;
+  }
+
+  .bookmark-area {
+    position: static;
+    margin: auto 10px;
+  }
+
+  .more-info-container {
+    position: absolute;
+    bottom: -260px;
+    border-top-left-radius: 8px;
+  }
+
+  .less-info-button {
+    border-top-left-radius: 8px;
+  }
+}
