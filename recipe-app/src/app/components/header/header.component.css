@@ -32,14 +32,57 @@ li {
   margin: 10px;
 }
 
+a:hover {
+  color: orange;
+}
+
 a {
   display: block;
   text-decoration: none;
   color: #213037;
   font-weight: 600;
-  font-size: 1 em;
+  font-size: 18px;
 }
 
-.spice {
-  margin-top: 10px;
+.fruit {
+  width: 100%;
+  margin: 0px;
+
 }
+
+@media only screen and (max-width: 768px) {
+ .fruit {
+  display: none;
+ }
+
+.navbar {
+  margin-top: 10px;
+  display: flex;
+  float: left;
+
+}
+
+ li {
+   background-color: #213037;
+   padding: 10px 20px;
+   border-radius: 5%;
+ }
+
+ a {
+   color: white;
+   font-size: 14px;
+ }
+
+ a:hover {
+  color: white;
+}
+
+.logo {
+  width: 100%;
+  margin:0px;
+  position: relative;
+}
+}
+
+
+
