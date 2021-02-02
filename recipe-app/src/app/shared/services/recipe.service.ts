@@ -7,15 +7,13 @@ import { Recipe } from '../models/recipe.interface';
   providedIn: 'root',
 })
 export class RecipeService {
+  constructor(private http: HttpClient) {}
+
   apiURL: string =
     'https://api.edamam.com/search?app_id=6fa67ecc&app_key=2023a81e815598f21c69a01dfd671038&from=0&to=20';
 
-  constructor(private http: HttpClient) {}
-
   recipeList: Recipe[] = [];
   favoriteList: Recipe[] = [];
-
-  mealType: string = '';
 
   getRecipes(
     keyword: string,

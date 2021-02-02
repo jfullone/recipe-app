@@ -13,11 +13,12 @@ export class FavoritesPageComponent implements OnInit {
   favoriteList: Recipe[] = [];
   favoriteListEmpty: boolean = true;
 
-  favColor: string = '';
+  onEmpty(value: boolean) {
+    this.favoriteListEmpty = value;
+  }
 
   ngOnInit(): void {
     this.favoriteList = this.recipeService.favoriteList;
-    console.log(this.favoriteList);
     this.favoriteListEmpty = this.favoriteList.length <= 0;
   }
 }

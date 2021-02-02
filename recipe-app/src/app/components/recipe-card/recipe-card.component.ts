@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from 'src/app/shared/models/recipe.interface';
 import { RecipeService } from 'src/app/shared/services/recipe.service';
 
@@ -8,7 +8,11 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   styleUrls: ['./recipe-card.component.css'],
 })
 export class RecipeCardComponent implements OnInit {
+  constructor(private recipeService: RecipeService) {}
+
   showInfo: boolean = false;
+  favColor: string = '';
+  favoriteList: Recipe[] = this.recipeService.favoriteList;
 
   @Input() recipe: Recipe = {
     name: '',
@@ -22,11 +26,7 @@ export class RecipeCardComponent implements OnInit {
     favorite: false,
   };
 
-  @Input() recipeList: Recipe[] = [];
-
-  favoriteList: Recipe[] = this.recipeService.favoriteList;
-
-  favColor: string = '';
+  @Output() favoriteListEmptied = new EventEmitter<boolean>();
 
   setFavorite(recipe: Recipe): void {
     if (!recipe.favorite) {
@@ -37,14 +37,17 @@ export class RecipeCardComponent implements OnInit {
       this.favoriteList.splice(index, 1);
       this.favColor = '#213037';
     }
+
+    if (this.favoriteList.length === 0) {
+      this.favoriteListEmptied.emit(true);
+    }
+
     recipe.favorite = !recipe.favorite;
   }
 
   toggleInfo() {
     this.showInfo = !this.showInfo;
   }
-
-  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.favColor = !this.recipe.favorite ? '#213037' : '#f78f27';

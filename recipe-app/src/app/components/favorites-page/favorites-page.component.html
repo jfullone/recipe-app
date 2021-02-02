@@ -1,6 +1,9 @@
 <div class="favorite-list">
   <div class="favorite" *ngFor="let recipe of favoriteList">
-    <recipe-card [recipe]="recipe"></recipe-card>
+    <recipe-card
+      [recipe]="recipe"
+      (favoriteListEmptied)="onEmpty($event)"
+    ></recipe-card>
   </div>
   <div class="no-recipes" *ngIf="favoriteListEmpty">
     No recipes have been added to favorites yet. Search to add recipes to your
