@@ -7,7 +7,6 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
-  /* height: 75%; */
 }
 
 .selections-container {
@@ -88,7 +87,7 @@ input:hover {
   width: 200px;
   background-color: #cfd1d0;
   cursor: text;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .submit-search {
@@ -105,14 +104,14 @@ input:hover {
 }
 
 .submit-search span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
 .submit-search span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -172,7 +171,6 @@ select {
   width: 200px;
   background-color: #cfd1d0;
   cursor: text;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 5px 0px 30px 30px;
 }
-

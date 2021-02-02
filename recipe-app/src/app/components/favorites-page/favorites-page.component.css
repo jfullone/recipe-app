@@ -1,6 +1,7 @@
 .favorite-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .no-recipes {

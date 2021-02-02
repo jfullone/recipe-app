@@ -11,10 +11,10 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
 export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService, private router: Router) {}
 
+  diets: string[] = ['Vegan', 'Vegetarian'];
   keyword: string = '';
   dietRestrictions: string[] = [];
   maxIngredients?: any;
-  diets: string[] = ['Vegan', 'Vegetarian'];
   recipeRoute: string = '';
 
   onCheckChange(event: any) {
@@ -46,13 +46,14 @@ export class SearchCriteriaComponent implements OnInit {
     this.recipeService.recipeList.push(newRecipe);
   }
 
-  searchRecipes(event: any) {
+  searchRecipes() {
     this.recipeService
       .getRecipes(this.keyword, this.dietRestrictions, this.maxIngredients)
       .subscribe((data: any) => {
         data.hits.forEach((hit: { recipe: any }) => {
           this.setRecipeList(hit.recipe);
         });
+
         this.router.navigate(['/recipe-list']);
       });
   }
