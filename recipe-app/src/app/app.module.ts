@@ -12,6 +12,7 @@ import { SearchCriteriaComponent } from './components/search-criteria/search-cri
 import { HeaderComponent } from './components/header/header.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 import { SpaceAfterComma } from './shared/pipes/space-after-comma.pipe';
+import { Header2Component } from './components/header2/header2.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SpaceAfterComma } from './shared/pipes/space-after-comma.pipe';
     HeaderComponent,
     RecipeCardComponent,
     SpaceAfterComma,
+    Header2Component,
   ],
   imports: [
     BrowserModule,
