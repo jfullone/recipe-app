@@ -1,0 +1,200 @@
+.recipe-card {
+  margin: 50px;
+  background-color: #79b8b9;
+  color: #213037;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+  width: 300px;
+}
+
+.recipe-details {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 0px 10px;
+}
+
+img {
+  width: 300px;
+  height: 250px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.recipe-name {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 22px;
+  margin: 8px 0px 8px 10px;
+}
+
+.recipe-details div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+.timer {
+  font-size: 20px;
+  margin: auto;
+}
+
+.group {
+  margin-right: 5px;
+}
+
+.recipe-description {
+  margin: 10px 40px 0px 0px;
+}
+
+.bookmark-area {
+  position: relative;
+  left: 250px;
+  bottom: 26px;
+}
+
+button.bookmark {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.bookmark-icon {
+  font-size: 27px;
+}
+
+.bookmark-icon:hover {
+  color: #f78f27;
+  cursor: pointer;
+}
+
+.more-info-button {
+  width: 100%;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background-color: #213037;
+  color: white;
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-info-button:focus,
+.less-info-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.more-info-button:hover,
+.less-info-button:hover {
+  cursor: pointer;
+  background-color: #f78f27;
+  color: #213037;
+}
+
+.less-info-button {
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  background-color: #213037;
+  color: white;
+  padding: 10px;
+  border-top-right-radius: 8px;
+}
+
+.more-info-container {
+  position: relative;
+  bottom: 44px;
+  background-color: #f78f27;
+  width: 650px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+}
+
+.link-container,
+.ingredient-container,
+.diet-health-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.link,
+.menu-book,
+.info {
+  padding-right: 10px;
+}
+
+a {
+  color: #213037;
+}
+
+a:visited {
+  color: #213037;
+}
+
+@media only screen and (max-width: 768px) {
+  .recipe-card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    margin: 10px;
+  }
+
+  .recipe-details {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .recipe-name {
+    margin: auto 10px;
+    width: 150px;
+  }
+
+  img {
+    height: 150px;
+    width: 25%;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .more-info-button {
+    width: 25%;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 8px;
+  }
+
+  .recipe-details div {
+    padding: 8px;
+    margin-right: 0px;
+  }
+
+  .bookmark-area {
+    position: static;
+    margin: auto 10px;
+  }
+
+  .more-info-container {
+    position: absolute;
+    bottom: -260px;
+    border-top-left-radius: 8px;
+  }
+
+  .less-info-button {
+    border-top-left-radius: 8px;
+  }
+}

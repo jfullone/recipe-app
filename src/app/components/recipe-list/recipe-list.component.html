@@ -1,0 +1,8 @@
+<div class="recipe-list">
+  <div class="recipe" *ngFor="let recipe of recipeList">
+    <recipe-card [recipe]="recipe"></recipe-card>
+  </div>
+  <div class="no-recipes" *ngIf="recipeListEmpty">
+    No recipes match the search criteria.
+  </div>
+</div>

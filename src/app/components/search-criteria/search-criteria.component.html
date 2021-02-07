@@ -1,0 +1,44 @@
+<form class="recipe-search" (submit)="searchRecipes()">
+  <div class="keyword">
+    <div class="search-header"><label for="keyword">KEYWORD</label></div>
+    <input
+      type="text"
+      placeholder="ie. beef stew"
+      class="keyword-search"
+      name="keyword"
+      [(ngModel)]="keyword"
+    />
+  </div>
+  <div class="selections-container">
+    <div class="dietary-checkboxes">
+      <div class="search-header">DIET</div>
+      <div *ngFor="let diet of diets; let i = index" class="checkboxes">
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            [value]="diet"
+            (change)="onCheckChange($event)"
+          />
+          <label>{{ diet }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ingredients">
+    <div class="search-header">
+      <label for="max-ingredients">MAX INGREDIENTS</label>
+    </div>
+    <input
+      type="text"
+      placeholder="ie. 4"
+      class="max-ingredients"
+      name="max-ingredients"
+      [(ngModel)]="maxIngredients"
+    />
+  </div>
+
+  <button class="submit-search">
+    <span>SEARCH</span>
+  </button>
+</form>
