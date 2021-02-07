@@ -120,6 +120,14 @@
               "devServerTarget": "recipe-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/recipe-app",
+            "netlifyToken": "PQdByY08xhx93RRjLS5NZAgHGAMbC92c3IT3b4CbkEQ",
+            "siteId": "a438bec1-9e10-4c24-a47d-6fabf0f810cb"
+          }
         }
       }
     }
