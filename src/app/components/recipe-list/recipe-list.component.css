@@ -5,10 +5,7 @@
 }
 
 .no-recipes {
-  color: #213037;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
   margin-top: 30px;
 }
 

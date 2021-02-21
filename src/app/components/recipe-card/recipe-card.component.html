@@ -1,27 +1,25 @@
 <div class="recipe-card">
   <img [src]="recipe.image" />
-  <span class="recipe-name"
-    ><a>{{ recipe.name }}</a></span
-  >
-  <span class="recipe-details">
-    <div>
+  <div class="recipe-name">{{ recipe.name | titlecase }}</div>
+  <div class="recipe-details">
+    <div class="time details">
       <mat-icon class="timer">timer</mat-icon>
-      <span class="time"> {{ recipe.time }} mins</span>
+      <span> {{ recipe.time }} mins</span>
     </div>
-    <div>
+    <div class="meal-yield details">
       <mat-icon class="group">groups</mat-icon>
-      <span class="meal-yield">Serves {{ recipe.servings }} </span>
+      <span>Serves {{ recipe.servings }} </span>
     </div>
-  </span>
-  <div class="bookmark-area">
+  </div>
+  <span class="bookmark-area">
     <button class="bookmark" (click)="setFavorite(recipe)">
       <mat-icon class="bookmark-icon" [style.color]="favColor"
         >favorite</mat-icon
       >
     </button>
-  </div>
+  </span>
   <button (click)="toggleInfo()" class="more-info-button">
-    LET'S COOK!<span class="material-icons"> expand_more </span>
+    LET'S COOK!<span class="material-icons">expand_more </span>
   </button>
   <div *ngIf="showInfo" class="more-info-container">
     <button (click)="toggleInfo()" class="less-info-button">

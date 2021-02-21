@@ -1,10 +1,4 @@
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
 header {
-  clear: both;
   overflow: auto;
 }
 
@@ -14,22 +8,12 @@ header {
 
 .navbar {
   display: flex;
-  float: right;
   justify-content: flex-end;
+  margin-top: 5px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  display: inline;
-  justify-content: space-between;
-  margin: 10px;
+div.link {
+  margin: 0px 10px 0px 10px;
 }
 
 a:hover {
@@ -37,52 +21,39 @@ a:hover {
 }
 
 a {
-  display: block;
   text-decoration: none;
   color: #213037;
-  font-weight: 600;
   font-size: 18px;
 }
 
 .fruit {
   width: 100%;
-  margin: 0px;
-
+  border-radius: 8px;
+  margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 768px) {
- .fruit {
-  display: none;
- }
+  .fruit {
+    display: none;
+  }
 
-.navbar {
-  margin-top: 10px;
-  display: flex;
-  float: left;
+  .navbar {
+    margin: 20px 0px 10px 0px;
+    justify-content: center;
+    width: 100%;
+  }
 
+  div.link {
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: #213037;
+  }
+
+  a {
+    color: white;
+  }
+
+  .logo {
+    width: 100%;
+  }
 }
-
- li {
-   background-color: #213037;
-   padding: 10px 20px;
-   border-radius: 5%;
- }
-
- a {
-   color: white;
-   font-size: 14px;
- }
-
- a:hover {
-  color: white;
-}
-
-.logo {
-  width: 100%;
-  margin:0px;
-  position: relative;
-}
-}
-
-
-

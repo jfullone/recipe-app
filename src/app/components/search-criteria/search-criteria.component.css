@@ -1,93 +1,72 @@
 .recipe-search {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f8b735;
-  margin: 20px 0px 20px 0px;
-  padding: 20px;
+  background-color: #f78f27;
   border-radius: 8px;
-  box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
-}
-
-.selections-container {
-  display: flex;
-  margin: 40px 0px 40px 0px;
-  justify-content: space-around;
-}
-
-.dietary-checkboxes {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-right: 20px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
-  background-color: #2b898b;
-}
-
-.checkboxes {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.checkboxes div {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  font-size: 15px;
-  color: #213037;
-}
-
-.checkboxes input {
-  color: aquamarine;
-}
-
-input:hover {
-  cursor: pointer;
-}
-
-.allergy-checkboxes {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
-  background-color: #2b898b;
-}
-
-.meal-types {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-left: 20px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
-  background-color: #2b898b;
+  padding: 30px;
 }
 
 .search-header {
   font-size: 26px;
-  color: #213037;
-  margin: 15px;
   text-align: center;
 }
 
-.keyword input {
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shadow {
+  box-shadow: 0px 0px 5px 0px #a15508;
+}
+
+.keyword-search,
+.max-ingredients {
   border: none;
+  margin-top: 15px;
   font-size: 15px;
   border-radius: 5px;
   padding: 5px;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
   width: 200px;
   background-color: #cfd1d0;
   cursor: text;
-  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+.selections-container {
+  margin: 40px 0px;
+}
+
+.selections-container {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #2b898b;
+}
+
+.diet-checkboxes {
+  margin: 10px 0px;
+}
+
+.diet-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+  cursor: pointer;
+}
+
+.diet-checkbox > input {
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  outline: none;
+  background-color: #cfd1d0;
+  -webkit-appearance: none;
+}
+
+.diet-checkbox > input:checked {
+  border: 1px solid #cfd1d0;
+  background-color: #34495e;
 }
 
 .submit-search {
@@ -97,14 +76,13 @@ input:hover {
   padding: 10px;
   border-radius: 5px;
   background-color: #213037;
-  color: white;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
-  font-family: "Poppins", sans-serif;
+  color: #cfd1d0;
+  margin-top: 40px;
   transition: all 0.5s;
+  outline: none;
 }
 
 .submit-search span {
-  cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
@@ -130,47 +108,4 @@ input:hover {
 
 .submit-search:hover {
   cursor: pointer;
-}
-
-select {
-  font-size: 15px;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #213037;
-  color: white;
-  margin-top: 20px;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-}
-
-.checkboxes div > input {
-  height: 18px;
-  width: 18px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border: 1px solid #34495e;
-  border-radius: 4px;
-  outline: none;
-  background-color: #cfd1d0;
-  cursor: pointer;
-}
-
-.checkboxes div > input:checked {
-  border: 1px solid white;
-  background-color: #34495e;
-}
-
-.max-ingredients {
-  border: none;
-  font-size: 15px;
-  border-radius: 5px;
-  padding: 5px;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
-  width: 200px;
-  background-color: #cfd1d0;
-  cursor: text;
-  font-family: "Poppins", sans-serif;
-  margin: 5px 0px 30px 30px;
 }

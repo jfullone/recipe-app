@@ -1,8 +1,19 @@
 <header>
-  <img src="assets/recipe-logo.png" alt="recipe-logo" class="logo" />
+  <a routerLink="/search-criteria"
+    ><img src="assets/recipe-logo.png" alt="recipe-logo" class="logo"
+  /></a>
   <nav class="navbar">
-    <li><a routerLink="/search-criteria">Home</a></li>
-    <li><a routerLink="/favorites-page">My Favorites</a></li>
+    <div class="link">
+      <a routerLink="/search-criteria">Home</a>
+    </div>
+    <div class="link">
+      <a routerLink="/favorites-page">My Favorites</a>
+    </div>
+    <div class="github link" title="Repo on Github">
+      <a href="https://github.com/ajmeller/angular-recipe-app" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </div>
   </nav>
   <img src="assets/fruit.png" alt="header-fruit" class="fruit" />
 </header>
